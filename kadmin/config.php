@@ -3,7 +3,6 @@ define('JB_VERSION', '2.5.1.1');
 //--MySQL SETTING--//////////////
 define('DB_HOST_SITE', 'localhost'); // хост
 session_start();
-$test = 'test';
 $href = explode("/", $_SERVER['REQUEST_URI']);
 if ($href[1] !== 'kadmin') {
     if ($href[1] == 'ru' || $href[1] != 'ua' && $href[1] != 'ru' && $href[1] != 'en') {
