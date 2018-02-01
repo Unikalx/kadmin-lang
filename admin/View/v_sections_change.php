@@ -341,9 +341,14 @@
                  */ ?>
                 <hr/>
                 <div class="button_lang col_12">
-                    <a href="#" button="ua" class="button active_button" onclick="return false;">Укр</a>
-                    <a href="#" button="ru" class="button" onclick="return false;">Рус</a>
-                    <a href="#" button="en" class="button" onclick="return false;">Eng</a>
+                    <?php
+                    foreach (LANG as $key => $item) { ?>
+                        <a href="#" button="<?= $item ?>" class="button <?= ($key == 1) ? "active_button" : "" ?>"
+                           onclick="return false;"><?= $item ?></a>
+                    <?php } ?>
+                    <!--                    <a href="#" button="ua" class="button active_button" onclick="return false;">Укр</a>-->
+                    <!--                    <a href="#" button="ru" class="button" onclick="return false;">Рус</a>-->
+                    <!--                    <a href="#" button="en" class="button" onclick="return false;">Eng</a>-->
                 </div>
                 <?php
                 /**

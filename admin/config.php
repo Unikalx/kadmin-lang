@@ -1,8 +1,8 @@
 <?php
+
 define('JB_VERSION', '2.5.1.1');
-//--MySQL SETTING--//////////////
-define('DB_HOST_SITE', 'localhost'); // хост
 session_start();
+
 $href = explode("/", $_SERVER['REQUEST_URI']);
 if ($href[1] !== 'admin') {
     if ($href[1] == 'ru' || $href[1] != 'ua' && $href[1] != 'ru' && $href[1] != 'en') {
@@ -18,22 +18,23 @@ if ($href[1] !== 'admin') {
 }
 
 
-
-include_once('db_connect.php');
-
+define('DB_HOST_SITE', 'localhost');
+define('DB_USER_SITE', 'root');
+define('DB_PASSWORD_SITE', '');
+define('DB_NAME_SITE', 'adminLang');
 
 define('ADMIN_LANG', 'ru');
+
 define('ADMIN_EMAIL', 'xUnikalx@gmail.com');
-define('CLIENT_EMAIL', '');
+define('CLIENT_EMAIL', 'My');
 
-define('SITE_URL', 'http://ax.korzun.pp.ua/');
+define('SITE_URL', 'http://kadmin-lang');
 
-define('SITE_NAME', 'AXSIOMA');
+define('SITE_NAME', 'Admin');
 
-//define('LANG', ['ru','en']);
+define('LANG', ['ru','en']);
 
 //--SECTIONS--//
-
 define('SECTIONS', 1);
 
 define('SET_URL_TEMPLATE_SECTIONS', '{1}');

@@ -4,7 +4,7 @@ include_once('config.php');
 include_once('startup.php');
 include_once('Model/Model.php');
 
-startup();
+//startup();
 $db = Model::Instance();
 session_start();
 if (isset($_POST['message']) AND $_POST['message'] != ''){

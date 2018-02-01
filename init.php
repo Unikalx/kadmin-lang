@@ -4,7 +4,7 @@ include_once('admin/startup.php');
 include_once('admin/Model/Model.php');
 include_once('templates/blocks/translation.php');
 
-startup();
+//startup();
 
 $db = Model::Instance();
 

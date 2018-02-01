@@ -221,8 +221,6 @@ Class Model
 		$t = 'SELECT * FROM %s %s';
 		$query = sprintf ($t, $table, $where);
 
-//		print_r($query);
-//		die();
 		return $this->msql->Select($query);		
 	}
 	

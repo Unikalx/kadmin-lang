@@ -3,7 +3,7 @@ include_once('config.php');
 include_once('startup.php');
 include_once('Model/M_Users.php');
 
-startup();
+//startup();
 
 // CREATE CLASS -> M_Users
 $mUsers = M_Users::Instance();

@@ -918,7 +918,8 @@ overflow-y: visible;
 
 .login_form { position: absolute; top: 43%; right: 0; bottom: 0; left: 0; margin: auto; max-width: 350px; width: 100%; height: 306px; margin-top: -153px; box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.29); background-color: #fff; padding: 2rem; z-index: 2; }
 
-.login_form .logo { margin-bottom: 2rem; display: block; }
+.login_form .logo { margin-bottom: 2rem; display: block; text-align: center;}
+.login_form .logo svg{width: 20rem;}
 
 .login_form .button { margin-bottom: 0; float: right; margin-top: 0.5rem; background-color: #fff; color: #617d8b; }
 
