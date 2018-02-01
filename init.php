@@ -1,7 +1,7 @@
 <?php
-include_once('kadmin/config.php');
-include_once('kadmin/startup.php');
-include_once('kadmin/Model/Model.php');
+include_once('admin/config.php');
+include_once('admin/startup.php');
+include_once('admin/Model/Model.php');
 include_once('templates/blocks/translation.php');
 
 startup();
