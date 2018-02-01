@@ -9,7 +9,7 @@
 		<?php endif?>
 		<a href='/' class='to_website || header_icon' title='Go to the website' target='_blank'><svg class='icon'><use xlink:href='View/img/svgdefs.svg#icon_home'></use></svg><span>Открыть сайт</span></a>
 		<div class='header_user'>
-			<a href='/kadmin/login' title='Logout' class='logout'><svg class='icon'><use xlink:href='View/img/svgdefs.svg#icon_exit'></use></svg></a>
+			<a href='/admin/login' title='Logout' class='logout'><svg class='icon'><use xlink:href='View/img/svgdefs.svg#icon_exit'></use></svg></a>
 			<div class='logged_as'>
 				Вы вошли как <?php if($_SESSION['authorize']['status'] == 1 ){ echo "Super Admin";} else{ echo"Admin";}?>
 			</div>
@@ -44,7 +44,7 @@
 <div class="help_dialog || dialog">
 	<div class="h2">Помощь</div>
 	<p>Если у Вас возникли вопросы - напишите нам:</p>
-	<form action='/kadmin/mailer.php' method='POST' class='clearfix'>
+	<form action='/admin/mailer.php' method='POST' class='clearfix'>
 		<select name='subject' class='input'>
 			<option value='' selected disabled>Выберите категорию</option>
 			<option value='Техническая поддержка'>Техническая поддержка</option>

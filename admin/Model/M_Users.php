@@ -123,7 +123,7 @@ class M_Users
 	public function ifLogin()
 	{
 		if(!isset($_SESSION['authorize']) && !isset($_COOKIE['authorize'])){
-			header('Location: /kadmin/login');
+			header('Location: /admin/login');
 		}elseif($_SESSION['id_user']=='' && !empty($_COOKIE['authorize'])){
 
 			$last_login = self::Get_last_login($_COOKIE['authorize']);

@@ -15,7 +15,7 @@
         <div class="row || col_9">
             <div class="col_8">
                 <a class="button || outline" data-delete-fields="">Удалить выбранное</a>
-                <a class="button || outline" href="/kadmin/?t=<?=$table?>&c=change">Добавить новое</a>
+                <a class="button || outline" href="/admin/?t=<?=$table?>&c=change">Добавить новое</a>
             </div>
         </div>
     </div>
@@ -33,23 +33,23 @@
 
             <td class="tc" width="65" data-field-name="id">
                 id
-                <a href="/kadmin/?t=<?=$table?>&c=select&sort=<?=$_GET['sort']=='id'?'-':'';?>id" title="Sort items" class="sort"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="View/img/svgdefs.svg#<?php if($_GET['sort']=='-id'){echo 'icon_chevron_up';}elseif($_GET['sort']=='id' ){echo 'icon_chevron_down';}else{echo 'icon_sort';};?>"></use></svg></a>
+                <a href="/admin/?t=<?=$table?>&c=select&sort=<?=$_GET['sort']=='id'?'-':'';?>id" title="Sort items" class="sort"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="View/img/svgdefs.svg#<?php if($_GET['sort']=='-id'){echo 'icon_chevron_up';}elseif($_GET['sort']=='id' ){echo 'icon_chevron_down';}else{echo 'icon_sort';};?>"></use></svg></a>
             </td>
             <td class="tc" width="" data-field-name="name">
                 name
-                <a href="/kadmin/?t=<?=$table?>&c=select&sort=<?=$_GET['sort']=='name'?'-':'';?>name" title="Sort items" class="sort"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="View/img/svgdefs.svg#<?php if($_GET['sort']=='-name'){echo 'icon_chevron_up';}elseif($_GET['sort']=='name' ){echo 'icon_chevron_down';}else{echo 'icon_sort';};?>"></use></svg></a>
+                <a href="/admin/?t=<?=$table?>&c=select&sort=<?=$_GET['sort']=='name'?'-':'';?>name" title="Sort items" class="sort"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="View/img/svgdefs.svg#<?php if($_GET['sort']=='-name'){echo 'icon_chevron_up';}elseif($_GET['sort']=='name' ){echo 'icon_chevron_down';}else{echo 'icon_sort';};?>"></use></svg></a>
             </td>
             <td class="tc" width="" data-field-name="email">
                 email
-                <a href="/kadmin/?t=<?=$table?>&c=select&sort=<?=$_GET['sort']=='email'?'-':'';?>email" title="Sort items" class="sort"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="View/img/svgdefs.svg#<?php if($_GET['sort']=='-email'){echo 'icon_chevron_up';}elseif($_GET['sort']=='email' ){echo 'icon_chevron_down';}else{echo 'icon_sort';};?>"></use></svg></a>
+                <a href="/admin/?t=<?=$table?>&c=select&sort=<?=$_GET['sort']=='email'?'-':'';?>email" title="Sort items" class="sort"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="View/img/svgdefs.svg#<?php if($_GET['sort']=='-email'){echo 'icon_chevron_up';}elseif($_GET['sort']=='email' ){echo 'icon_chevron_down';}else{echo 'icon_sort';};?>"></use></svg></a>
             </td>
             <td class="tc" width="" data-field-name="phone">
                 phone
-                <a href="/kadmin/?t=<?=$table?>&c=select&sort=<?=$_GET['sort']=='phone'?'-':'';?>phone" title="Sort items" class="sort"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="View/img/svgdefs.svg#<?php if($_GET['sort']=='-phone'){echo 'icon_chevron_up';}elseif($_GET['sort']=='phone' ){echo 'icon_chevron_down';}else{echo 'icon_sort';};?>"></use></svg></a>
+                <a href="/admin/?t=<?=$table?>&c=select&sort=<?=$_GET['sort']=='phone'?'-':'';?>phone" title="Sort items" class="sort"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="View/img/svgdefs.svg#<?php if($_GET['sort']=='-phone'){echo 'icon_chevron_up';}elseif($_GET['sort']=='phone' ){echo 'icon_chevron_down';}else{echo 'icon_sort';};?>"></use></svg></a>
             </td>
             <td class="tc" width="" data-field-name="city">
                 city
-                <a href="/kadmin/?t=<?=$table?>&c=select&sort=<?=$_GET['sort']=='city'?'-':'';?>city" title="Sort items" class="sort"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="View/img/svgdefs.svg#<?php if($_GET['sort']=='-city'){echo 'icon_chevron_up';}elseif($_GET['sort']=='city' ){echo 'icon_chevron_down';}else{echo 'icon_sort';};?>"></use></svg></a>
+                <a href="/admin/?t=<?=$table?>&c=select&sort=<?=$_GET['sort']=='city'?'-':'';?>city" title="Sort items" class="sort"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="View/img/svgdefs.svg#<?php if($_GET['sort']=='-city'){echo 'icon_chevron_up';}elseif($_GET['sort']=='city' ){echo 'icon_chevron_down';}else{echo 'icon_sort';};?>"></use></svg></a>
             </td>
             <td class="tc" width="130">Редактор</td>
         </tr>
@@ -70,7 +70,7 @@
             <td class="tc"><?=$customer['phone']?></td>
             <td class="tc"><?=$customer['city']?></td>
             <td class="tc">
-                <a href="/kadmin/?t=<?=$table?>&c=change&id=<?=$customer['id']?>" class="link_icon">
+                <a href="/admin/?t=<?=$table?>&c=change&id=<?=$customer['id']?>" class="link_icon">
                     <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="View/img/svgdefs.svg#icon_tune"></use></svg>
                 </a>
             </td>
@@ -84,7 +84,7 @@
         <?php if($_GET['sort']!='') $sort = "&sort=".$_GET['sort']; else $sort='';?>
         <div class='pagination'>
             <?php if($pagination['page'] > 1):?>
-            <a class='pagi' href='/kadmin/?t=<?=$table?>&c=select<?=$sort?>&page=<?=$pagination['page']-1?>'>
+            <a class='pagi' href='/admin/?t=<?=$table?>&c=select<?=$sort?>&page=<?=$pagination['page']-1?>'>
                 <svg class='icon'>
                     <use xlink:href='View/img/svgdefs.svg#icon_chevron_left'></use>
                 </svg>
@@ -93,19 +93,19 @@
 
             <?php for($i=1; $i<=$pagination['count_pages']; $i++):?>
                 <?php if($i == 1 && ($pagination['page'] - 3) > 1):?>
-                    <a class='pagi' href='/kadmin/?t=<?=$table?>&c=select<?=$sort?>&page=<?=1?>'>1</a>
+                    <a class='pagi' href='/admin/?t=<?=$table?>&c=select<?=$sort?>&page=<?=1?>'>1</a>
                     <?php $i = $pagination['page'] - 3;?>
-                    <a class='pagi' href='/kadmin/?t=<?=$table?>&c=select<?=$sort?>&page=<?=$i?>'>...</a>
+                    <a class='pagi' href='/admin/?t=<?=$table?>&c=select<?=$sort?>&page=<?=$i?>'>...</a>
                 <?php elseif($i == ($pagination['page'] + 3) && $i != $pagination['count_pages']):?>
-                    <a class='pagi' href='/kadmin/?t=<?=$table?>&c=select<?=$sort?>&page=<?=$i?>'>...</a>
-                    <a class='pagi' href='/kadmin/?t=<?=$table?>&c=select<?=$sort?>&page=<?=$pagination['count_pages']?>'><?=$pagination['count_pages']?></a>
+                    <a class='pagi' href='/admin/?t=<?=$table?>&c=select<?=$sort?>&page=<?=$i?>'>...</a>
+                    <a class='pagi' href='/admin/?t=<?=$table?>&c=select<?=$sort?>&page=<?=$pagination['count_pages']?>'><?=$pagination['count_pages']?></a>
                     <?php $i = $pagination['count_pages'];?>
                 <?php else: ?>
-                    <a class='pagi || <?= ($pagination['page'] == $i) ? "active" : ""?>' href='/kadmin/?t=<?=$table?>&c=select<?=$sort?>&page=<?=$i?>'><?=$i?></a>
+                    <a class='pagi || <?= ($pagination['page'] == $i) ? "active" : ""?>' href='/admin/?t=<?=$table?>&c=select<?=$sort?>&page=<?=$i?>'><?=$i?></a>
                 <?php endif?>
             <?php endfor?>
         <?php if(!($pagination['page'] >= $pagination['count_pages'])):?>
-            <a class='pagi' href='/kadmin/?t=<?=$table?>&c=select<?=$sort?>&page=<?=$pagination['page']+1?>'>
+            <a class='pagi' href='/admin/?t=<?=$table?>&c=select<?=$sort?>&page=<?=$pagination['page']+1?>'>
                 <svg class='icon'>
                     <use xlink:href='View/img/svgdefs.svg#icon_chevron_right'></use>
                 </svg>

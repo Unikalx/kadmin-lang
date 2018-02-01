@@ -19,7 +19,7 @@
 
                 <!-- виводиться назва таблиці, та дія (створення, редагування) -->
             <span class="h1"><?=$_GET['id'] ? 'редактирование' : 'добавление';?> статьи
-                <a  href="/kadmin/?t=article_comments&c=select&page=1&article=<?=$columns['id']?>" class="h3" style="float:right;">Комментарии</a>
+                <a  href="/admin/?t=article_comments&c=select&page=1&article=<?=$columns['id']?>" class="h3" style="float:right;">Комментарии</a>
             </span>
 
                 <div class="row">
@@ -58,7 +58,7 @@
                             <?php if ($article_in_cats):?>
 							<?php foreach ($article_in_cats as $cat): ?>
                                 <input type="hidden" name="a_cat[]" value="<?= $cat['id_category'] ?>" data-val="<?= $cat['id_category'] ?>">
-                                <span data-val="<?= $cat['id_category'] ?>"><?= $categories[$cat['id_category']]['name'] ?> <a data-delete-cat href="#"><svg class='icon'><use xlink:href='/kadmin/View/img/svgdefs.svg#icon_close'></use></svg></a></span>
+                                <span data-val="<?= $cat['id_category'] ?>"><?= $categories[$cat['id_category']]['name'] ?> <a data-delete-cat href="#"><svg class='icon'><use xlink:href='/admin/View/img/svgdefs.svg#icon_close'></use></svg></a></span>
                             <?php endforeach; ?>
 							<? endif ?>
                         </div>
