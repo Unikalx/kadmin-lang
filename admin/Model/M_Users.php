@@ -7,7 +7,7 @@ include_once('Model/MSQL.php');
 class M_Users
 {
     private static $instance;    // экземпляр класса
-    private $msql;                // драйвер БД
+    private $msql;               // драйвер БД
     private $sid;                // идентификатор текущей сессии
     private $uid;                // идентификатор текущего пользователя
 
@@ -106,6 +106,7 @@ class M_Users
     {
         setcookie('authorize', '', time() - 1);
         setcookie('password', '', time() - 1);
+        unset($_COOKIE['login']);
         unset($_COOKIE['authorize']);
         unset($_COOKIE['password']);
         unset($_SESSION['authorize']);
@@ -163,7 +164,7 @@ class M_Users
     public function GetByLogin($login)
     {
         $t = "SELECT * FROM users WHERE login = '%s'";
-        $query = sprintf($t, $login);
+        $query = sprintf($t, $this->msql->mysqli()->real_escape_string($login));
         $result = $this->msql->Select_string($query);
         return $result;
     }
@@ -289,7 +290,6 @@ class M_Users
 
         $t = "login = '%s'";
         $where = sprintf($t, $login);
-
         $this->msql->Update('users', $object, $where);
     }
 

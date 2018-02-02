@@ -27,7 +27,6 @@ class C_Sections_Select extends C_Base
     protected function OnInput()
     {
         parent::OnInput();
-
         // берем один экземпляр класса Model i M_Table
         $object = Model::Instance();
         $m_table = M_Table::Instance();
@@ -80,20 +79,26 @@ class C_Sections_Select extends C_Base
         }
 
         //визначаємо параметри пагінації
+        print_r('go');
+
         $this->pagination = $m_table->getPaginationValues($this->table, $this->where);
+
+        print_r('stop');
+        die();
+
         if ($this->pagination['count_pages'] > 1) {
             $this->limit = "LIMIT " . $this->pagination['offset'] . "," . $this->pagination['limit'];
         }
-        $this->and =($this->order !== '' &&$this->limit !== '' && $this->where !== '')?' AND ':'';
-        $this->Sections = $object->Array_clean("Select s.id,sT.name,s.url FROM sections as s JOIN sectionsTranslate as sT on sT.id_section = s.id WHERE lang='".ADMIN_LANG."' $this->and $this->where GROUP by s.id $this->order $this->limit");
+        $this->and = ($this->order !== '' && $this->limit !== '' && $this->where !== '') ? ' AND ' : '';
+        $this->Sections = $object->Array_clean("Select s.id,sT.name,s.url FROM sections as s JOIN sectionsTranslate as sT on sT.id_section = s.id WHERE lang='" . ADMIN_LANG . "' $this->and $this->where GROUP by s.id $this->order $this->limit");
 
-	//форматуємо юрл по шаблону
-		foreach ($this->Sections as &$sectDb) {
+        //форматуємо юрл по шаблону
+        foreach ($this->Sections as &$sectDb) {
             $sectDb['url'] = M_Columns::getFormatUrl($this->table, $vall = array(1 => $sectDb['url']));
         }
 
 
-	}
+    }
 
     // виртуальный генератор HTML
     protected function OnOutput()

@@ -14,8 +14,6 @@ $db = Model::Instance();
 // EXIT.
 $mUsers->Logout();
 
-$db->Array_clean('SELECT * FROM `users`');
-
 // GET INFO FROM THE FORM
 if (!empty($_POST)) {
     if ($mUsers->Login($_POST['login'], $_POST['password'], $_POST['remember'])) {
@@ -29,7 +27,7 @@ if (!empty($_POST)) {
 
         setcookie('login', $_POST['login']);
 
-//        $mUsers->LastLoginUpdate($_POST['login']);
+        $mUsers->LastLoginUpdate($_POST['login']);
         header('Location: /admin');
 
     }

@@ -6,7 +6,6 @@ class MSQL
     // ссылка на экземпляр класса :
     private static $instance;
 
-
     // получение экземпляра класса :
     public static function Instance()
     {
@@ -19,7 +18,7 @@ class MSQL
     // выборка данных :
     // $query    - полный текст SQL запроса
     // результат - массив выбранных объектов
-    private function mysqli()
+    public function mysqli()
     {
         if (!$this->connection) {
             $this->connection = new mysqli(DB_HOST_SITE, DB_USER_SITE, DB_PASSWORD_SITE, DB_NAME_SITE);
@@ -27,7 +26,6 @@ class MSQL
         } else {
             return $this->connection;
         }
-
 
     }
 
@@ -47,15 +45,18 @@ class MSQL
     // результат - количество строк
     public function Select_num($query)
     {
-        $res = @mysql_query($query);
+        print_r($query);
+        print_r('Select_num');
+        die();
+        $res = $this->mysqli()->query($query);
 
         if (!$res) {
-            die(mysql_error());
+            die($this->mysqli()->connect_error);
             //die("Error");
         }
         // количество строк :
-        $result = @mysql_num_rows($res);
-
+//        $result = @mysql_num_rows($res);
+        $result->num_rows;
         return $result;
     }
 
@@ -101,7 +102,7 @@ class MSQL
         $result = @mysql_query($query);
 
         if (!$result) {
-            die(mysql_error());
+            die($this->mysqli()->connect_error);
             //die("Error");
         }
 
@@ -118,26 +119,24 @@ class MSQL
         $sets = array();
 
         foreach ($object as $key => $value) {
-            $key = mysql_real_escape_string($key . '');
+            $key = $this->mysqli()->real_escape_string($key . '');
 
             if ($value === null) {
                 $sets[] = "$key=NULL";
             } else {
-                $value = mysql_real_escape_string($value . '');
+                $value = $this->mysqli()->real_escape_string($value . '');
                 $sets[] = "$key='$value'";
             }
         }
 
         $sets_s = implode(',', $sets);
         $query = "UPDATE $table SET $sets_s WHERE $where";
-        $result = @mysql_query($query);
 
+        $result = $this->mysqli()->query($query);
         if (!$result) {
-            die(mysql_error());
-            //die("Error");
+            die($this->mysqli()->connect_error);
         }
-
-        return mysql_affected_rows();
+        return $this->mysqli()->affected_rows;
     }
 
     // удаление данных :
@@ -150,10 +149,10 @@ class MSQL
         $result = @mysql_query($query);
 
         if (!$result) {
-            die(mysql_error());
+            die($this->mysqli()->connect_error);
             //die("Error");
         }
 
-        return mysql_affected_rows();
+        return $this->mysqli()->affected_rows;
     }
 }
